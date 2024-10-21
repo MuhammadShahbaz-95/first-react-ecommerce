@@ -1,0 +1,133 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+body {
+    margin: 0;
+    background-color: #F4F4F4;
+    font-family: 'Poppins', sans-serif;
+}
+
+:root {
+    --item1-transform: translateX(-10%) translateY(-5%) scale(0.6);
+    --item1-filter: blur(10px);
+    --item1-zIndex: 11;
+    --item1-opacity: 0;
+    
+    --item2-transform: translateX(0);
+    --item2-filter: blur(0px);
+    --item2-zIndex: 10;
+    --item2-opacity: 1;
+    
+    --item3-transform: translate(10%,10%) scale(0.7);
+    --item3-filter: blur(10px);
+    --item3-zIndex: 9;
+    --item3-opacity: 1;
+}
+
+/* Carousel styles */
+.carousel {
+    position: relative;
+    height: 720px;
+    overflow: hidden;
+    margin-top: -50px;
+}
+
+.carousel .list {
+    position: absolute;
+    width: 1140px;
+    max-width: 90%;
+    height: 80%;
+    top: 50px;
+    left: 75%;
+    transform: translateX(-50%);
+}
+
+.carousel .list .item {
+    position: absolute;
+    left: 0%;
+    width: 70%;
+    height: 100%;
+    font-size: 15px;
+    transition: left 2s, opacity 4s, width 2s;
+    opacity: 0;
+    transform: var(--item1-transform);
+    z-index: var(--item1-zIndex);
+    filter: var(--item1-filter);
+}
+
+.carousel .list .item.active {
+    transform: var(--item2-transform);
+    filter: var(--item2-filter);
+    z-index: var(--item2-zIndex);
+    opacity: var(--item2-opacity);
+}
+
+.carousel .list .item img {
+    width: 50%;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: right 1.5s;
+}
+
+.carousel .list .introduce {
+    opacity: 1;
+    text-transform: uppercase;
+    animation: showContent 0.5s 0s ease-in-out 1 forwards;
+    animation-delay: 1s;
+    text-align: left;
+    margin-top:25%;
+    margin-left:-50%;
+    max-width:85%;
+
+
+    
+    pointer-events: none;
+}
+
+.carousel .list .introduce .title,
+.carousel .list .introduce .topic,
+.carousel .list .introduce .seeMore {
+    opacity: 0;
+    animation: showContent 0.5s 1s ease-in-out 1 forwards;
+}
+
+@keyframes showContent {
+    from {
+        transform: translateY(-30px);
+        filter: blur(10px);
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+        filter: blur(0px);
+    }
+}
+
+.arrows {
+    position: absolute;
+    bottom: 10px;
+    width: 1140px;
+    max-width: 90%;
+    display: flex;
+    justify-content: space-between;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+#prev:hover,
+#next:hover {
+    background-color: rgb(221, 203, 178);
+}
+
+#prev,
+#next {
+    padding: 15px;
+    margin-bottom:20px;
+    
+    border-radius: 50%;
+    font-family: monospace;
+    border: 2px solid #55515155;
+    font-size: large;
+    background: transparent;
+}

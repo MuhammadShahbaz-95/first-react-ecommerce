@@ -1,0 +1,84 @@
+/* styles.css */
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body{
+  /* display: flex; */
+  /* width: 100%;    */
+  /* justify-content: center; */
+  /* background: rgb(85,57,158);
+background: linear-gradient(90deg, rgba(85,57,158,1) 22%, rgba(98,49,134,1) 45%, rgba(106,65,115,1) 59%); */
+
+} 
+.contact-us-container {
+  height:450px;
+    width: 400px;
+    margin-top:-70px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  h1 {
+    text-align: center;
+    margin-top:50px;
+    color: rgb(242, 237, 237);
+  }
+  
+  .form-group {
+    margin-bottom: 15px;
+
+  }
+  
+  label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: rgb(242, 237, 237);
+
+  }
+  
+  input,
+  textarea {
+    width: 100%;
+    height:40px;
+    /* display:flex; */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    color: block;
+  }
+  
+  .input-error {
+    border-color: red;
+  }
+  
+  .error {
+    color: red;
+    font-size: 0.85em;
+  }
+  
+  .success-message {
+    color: rgb(242, 237, 237);
+    font-size: 1.2em;
+    text-align: center;
+  }
+  
+  .submit-btn {
+    background-color: #007BFF;
+    color: white;
+    margin-top: 1.5em;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+  }
+  
+  .submit-btn:hover {
+    background-color: #0056b3;
+  }
+  
